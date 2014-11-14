@@ -1,6 +1,15 @@
 #ng-simple-rest-app
 Simple rest app written in Angular
 
+## Demo
+Online video demo: [https://vimeo.com/111823715](https://vimeo.com/111823715)
+
+## Blog
+[http://stevenhollidge.blogspot.com/2014/11/ng-simple-rest-app.html](http://stevenhollidge.blogspot.com/2014/11/ng-simple-rest-app.html)
+
+## Source
+[https://github.com/stevenh77/ng-simple-rest-app](https://github.com/stevenh77/ng-simple-rest-app)
+
 ## Pre-Requisites
 Install [Node.js](http://nodejs.org)
 
