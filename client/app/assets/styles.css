@@ -1,0 +1,144 @@
+﻿body {
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v14/N5Lbe1fynPA1KT8BFvAiGw.woff2) format('woff2'), url(//fonts.gstatic.com/s/roboto/v14/grlryt2bdKIyfMSOhzd1eA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/s/roboto/v14/tZdhd9Zzj0I2MwoD56osIw.woff2) format('woff2'), url(//fonts.gstatic.com/s/roboto/v14/vxNK-E6B13CyehuDCmvQvw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/s/roboto/v14/El-bgsteBznJNL5pgUfFLA.woff2) format('woff2'), url(//fonts.gstatic.com/s/roboto/v14/d-QWLnp4didxos_6urzFtg.woff) format('woff');
+}
+
+h2 { 
+    margin-bottom: 20px;
+}
+
+.film img {
+    height: 200px;
+    margin-top: 10px;
+}
+
+.stacked {
+    float: none !important;
+    display: block;
+    margin: auto;
+}
+
+.padd {
+    padding: 15px;
+}
+
+.list-flow {
+    margin: 6px;
+    float: left;
+    width: 150px;
+    height: 300px;
+    border-bottom: solid 0 transparent;
+    padding: 1.5% .5%;
+}
+*:focus {
+    outline: 0;
+    outline-style: none;
+}
+:required{
+    background: #fff url('required.png') no-repeat 100% 0;
+}
+.ng-valid:not(form) ~ .input-validation::before{
+    content: "✓";
+    color: green;
+}
+.error-messages.ng-scope {
+    font-size: 11px;
+    color: #F2493D;
+    padding: 0;
+    margin-top: 5px;
+    position: relative;
+}
+
+.busyIndicatorContainer {
+    height: 30px;
+}
+
+.img-busyIndicator {
+    height: 25px;
+    width: 25px;
+    margin:5px;
+}
+
+.service-error-messages-container {
+    margin-top: 20px;
+}
+
+.service-error-messages {
+    color: #F2493D;
+}
+
+.form-control {
+    border: 0px solid #ccc;
+    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-radius: 0px; 
+    box-shadow: inset 0 0px 0px rgba(0,0,0,0); 
+    padding: 0 0;
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+    width:90%;
+    display: inline;
+}
+
+.input-validation {
+    display:inline;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.form-control:focus {
+    border: 0px solid #ccc;
+    border-bottom-color: #2A9AF1;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-radius: 0px; 
+    box-shadow: inset 0 0px 0px rgba(0,0,0,0); 
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.form-control.ng-invalid.ng-touched:not(.ng-pristine) {
+    border-bottom-color: #F2493D;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.control-label {
+    color: #989898;
+    font-size: 12px;
+}
+
+.form-group {
+    height:45px;
+}
+
+*:focus {
+    outline: 0;
+    outline-style: none;
+}
+
+.film:hover {
+    cursor: pointer;
+}

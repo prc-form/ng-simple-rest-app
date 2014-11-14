@@ -1,0 +1,144 @@
+<section id="films-detail">
+    <div class="container">
+        <h2 class="row">{{ vm.title }}</h2>
+        <div class="row">
+            <form class="form-horizontal"
+                  name="filmForm"
+                  ng-submit="vm.submitForm(filmForm.$valid)"
+                  novalidate>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">Title</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control"
+                                           type="text"
+                                           name="title"
+                                           ng-model="vm.film.title"
+                                           required
+                                           minlength="2" 
+                                           autofocus />
+                                    <div class="input-validation"></div>
+
+                                    <div ng-if="filmForm.$submitted || filmForm.title.$touched">
+                                        <div class="error-messages" ng-if="filmForm.title.$error.required" ng-message="required">Required</div>
+                                        <div class="error-messages" ng-if="filmForm.title.$error.minlength" ng-message="minlength">Minimum length is two characters</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="imageUrl" class="col-sm-3 control-label">Image Url</label>
+
+                                <div class="col-sm-9">
+                                    <input name="imageUrl"
+                                           class="form-control"
+                                           data-ng-model="vm.film.imageUrl"
+                                           type="url"
+                                           required />
+                                    <div class="input-validation"></div>
+
+                                    <div ng-if="filmForm.$submitted || filmForm.imageUrl.$touched">
+                                        <div class="error-messages" ng-if="filmForm.imageUrl.$error.required" ng-message="required">Required</div>
+                                        <div class="error-messages" ng-if="filmForm.imageUrl.$error.url" ng-message="url">Invalid Url</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" show-errors>
+                                <label for="releaseDate" class="col-sm-3 control-label">Release Date</label>
+                                <div class="col-sm-9">
+                                    <input name="releaseDate"
+                                           type="date"
+                                           class="form-control"
+                                           data-ng-model="vm.film.releaseDate"
+                                           required
+                                           placeholder="Release Date"
+                                           style="width: 170px;" />
+                                    <div class="input-validation"></div>
+
+                                    <div ng-if="filmForm.$submitted || filmForm.releaseDate.$touched">
+                                        <div class="error-messages" ng-if="filmForm.releaseDate.$error.required" ng-message="required">Required</div>
+                                        <div class="error-messages" ng-if="filmForm.releaseDate.$error.invalid" ng-message="invalid">Invalid date</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" show-errors>
+                                <label for="rating" class="col-sm-3 control-label">Rating</label>
+                                <div class="col-sm-9">
+                                    <select name="rating"
+                                            class="form-control"
+                                            data-ng-model="vm.film.rating"
+                                            required
+                                            ng-options="r as r.name for r in vm.ratings"
+                                            placeholder="Rating"
+                                            style="width: 170px;" />
+                                    <div class="input-validation"></div>
+
+                                    <div ng-if="filmForm.$submitted || filmForm.rating.$touched">
+                                        <div class="error-messages" ng-if="filmForm.rating.$error.required" ng-message="required">required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="length" class="col-sm-3 control-label">Length in minutes</label>
+
+                                <div class="col-sm-9">
+                                    <input name="length"
+                                           type="number"
+                                           class="form-control"
+                                           data-ng-model="vm.film.length"
+                                           required
+                                           style="width: 170px;" />
+                                    <div class="input-validation"></div>
+
+                                    <div ng-if="filmForm.$submitted || filmForm.length.$touched">
+                                        <div class="error-messages" ng-if="filmForm.length.$error.required" ng-message="required">required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <img ng-src="{{ vm.film.imageUrl }}" style="height: 220px" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row" style="margin-top:40px">
+                    <div class="col-sm-3">
+                        <input type="button"
+                               class="btn btn-danger"
+                               value="Delete"
+                               ng-really-message="Are you sure?"
+                               ng-really-click="vm.deleteFilm(vm.film)" />
+
+                        <input type="button"
+                               class="btn btn-warning"
+                               value="Throw"
+                               ng-click="vm.throwError()" />
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="pull-right">
+                            <img ng-show="vm.isBusy" ng-src="app/assets/busyIndicator.gif" class="img-busyIndicator" />
+                            <input type="button"
+                                   class="btn btn-default"
+                                   value="Cancel"
+                                   ng-click="vm.cancelForm()" />
+
+                            <input type="submit" 
+                                   class="btn btn-primary" 
+                                   value="Submit" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="service-error-messages-container">
+                        <span class="service-error-messages">{{vm.errorMessage}}</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

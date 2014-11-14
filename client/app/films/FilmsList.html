@@ -1,0 +1,24 @@
+<section id="films-list">
+    <div class="container">
+        <h2 class="row">{{ vm.title }}</h2>
+        <div class="row">
+            <div class="padd list-flow fader-animation"
+                 data-ng-repeat="f in vm.films | orderBy:'title' track by f.id"
+                 data-ng-click="vm.gotoFilmEdit(f)">
+
+                <div class="film">
+                    <img ng-src="{{ f.imageUrl }}" class="img-thumbnail stacked" />
+                    <h5>{{ f.title }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <input type="button" 
+                       class="btn btn-primary"
+                       value="Add Film"
+                       ng-click="vm.gotoFilmAdd()" />
+            </div>
+        </div>
+    </div>
+</section>

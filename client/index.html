@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-ng-app="simpleRestApp">
+<head>
+	<title>Simple REST App</title>
+	<style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="app/assets/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div data-ng-include="'app/common/Shell.html'"></div>
+    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="app/main.js"></script>
+    <script src="app/common/exception-handler.js"></script>
+    <script src="app/common/logger.js"></script>
+    <script src="app/common/ngReallyClick.js"></script>
+    <script src="app/films/FilmsService.js"></script>
+    <script src="app/films/FilmsDetailController.js"></script>
+    <script src="app/films/FilmsListController.js"></script>
+</body>
+</html>
