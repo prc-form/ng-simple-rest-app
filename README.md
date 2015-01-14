@@ -26,7 +26,7 @@ Install these NPM packages globally:
 Type `karma start karma.config.js`
 
 ## Running
-Type `node server/serverjs` and browse to `http://localhost:3412`
+Type `node server/server.js` and browse to `http://localhost:3412`
 
 ## Client features
 - default page not being shown by the router
