@@ -17,7 +17,7 @@
                                            name="title"
                                            ng-model="vm.film.title"
                                            required
-                                           minlength="2" 
+                                           minlength="2"
                                            autofocus />
                                     <div class="input-validation"></div>
 
@@ -113,11 +113,6 @@
                                value="Delete"
                                ng-really-message="Are you sure?"
                                ng-really-click="vm.deleteFilm(vm.film)" />
-
-                        <input type="button"
-                               class="btn btn-warning"
-                               value="Throw"
-                               ng-click="vm.throwError()" />
                     </div>
                     <div class="col-sm-3">
                         <div class="pull-right">
@@ -127,8 +122,8 @@
                                    value="Cancel"
                                    ng-click="vm.cancelForm()" />
 
-                            <input type="submit" 
-                                   class="btn btn-primary" 
+                            <input type="submit"
+                                   class="btn btn-primary"
                                    value="Submit" />
                         </div>
                     </div>

@@ -3,13 +3,13 @@
 
     angular
         .module('simpleRestApp', ['ngAnimate', 'ngRoute', 'ui.bootstrap'])
-        .config(['$routeProvider', routeConfig])
+        .config(['$routeProvider', '$locationProvider', routeConfig])
         .config(['$httpProvider', httpConfig])
         .run(['$route', function ($route) {
             $route.reload();
         }]);
 
-    function routeConfig($routeProvider) {
+    function routeConfig($routeProvider, $locationProvider) {
         $routeProvider
             .when('/films', {
                 templateUrl: 'app/films/FilmsList.html',
@@ -24,6 +24,9 @@
             .otherwise({
                 redirectTo: '/films'
             });
+
+        // use the HTML5 History API - to remove # from url
+        //$locationProvider.html5Mode(true);
     }
 
     function httpConfig($httpProvider) {

@@ -19,7 +19,6 @@
         vm.cancelForm = cancelForm;
         vm.submitForm = submitForm;
         vm.deleteFilm = deleteFilm;
-        vm.throwError = throwError;
 
         activate();
 
@@ -74,19 +73,6 @@
             });
         }
 
-        function throwError() {
-            // uncomment next line to see an app level exception handled
-            // throw "you can find this message in the console";
-
-            return FilmsService.throwError()
-            .then(function (data) {
-                // success callback... but we don't get here
-            }, function (data) {
-                // fail callback, output error message to UI
-                vm.errorMessage = "Error: " + data.data;
-            });
-        }
-
         function cancelForm() {
             $window.history.back();
         };
@@ -95,16 +81,13 @@
             if (!valid) return;
 
             vm.isBusy = true;
-            
-            if (vm.film.id === -1) {
 
+            if (vm.film.id === -1) {
                 // fake two second delay
                 $timeout(function () {
                     insertFilm();
-                }, 2000)                
-            }
-            else {
-
+                }, 2000)
+            } else {
                 // fake two second delay
                 $timeout(function () {
                     updateFilm();
@@ -113,7 +96,6 @@
         };
 
         function insertFilm() {
-
             FilmsService.insert(vm.film)
             .then(function (data) {
                 $window.history.back();
@@ -125,7 +107,6 @@
         }
 
         function updateFilm() {
-
             FilmsService.update(vm.film)
             .then(function (data) {
                 $window.history.back();

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "repository": "https://github.com/stevenh77/ng-simple-rest-app.git",
+  "repository": "https://github.com/prc-form/ng-simple-rest-app.git",
   "dependencies": {
     "body-parser": "^1.9.2",
     "compression": "^1.2.0",
@@ -17,13 +17,16 @@
     "morgan": "^1.5.0"
   },
   "devDependencies": {
+    "concurrently": "^2.0.0",
     "karma-sinon": "^1.0.3",
     "sinon": "^1.11.1"
   },
   "scripts": {
+    "client": "node server/server.js",
+    "server": "json-server --watch server/db.json",
     "test": "karma start karma.config.js",
-    "start": "node server/server.js"
+    "start": "concurrent \"npm run server\" \"npm run client\""
   },
-  "author": "Steven Hollidge",
-  "license": "ISC"
+  "author": "Pedro Reis Colaço from Steven Hollidge",
+  "license": "MIT"
 }

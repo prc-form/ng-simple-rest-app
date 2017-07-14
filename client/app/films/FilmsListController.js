@@ -9,7 +9,7 @@
         /* jshint validthis: true */
         var vm = this;
 
-        vm.title = 'Films';
+        vm.title = 'Movies';
         vm.films = [];
         vm.getAll = getAll;
         vm.gotoFilmAdd = gotoFilmAdd;
