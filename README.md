@@ -9,7 +9,7 @@ Install [Node.js](http://nodejs.org)
 
 Install these NPM packages globally:
 
-`npm install -g bower karma karma-cli`
+`npm install -g bower karma karma-cli json-server`
 
 ## Installing Packages
 - Open terminal
@@ -17,10 +17,10 @@ Install these NPM packages globally:
 - Type `bower install`
 
 ## Test
-Type `karma start karma.config.js`
+Type `npm test`
 
 ## Running
-Type `node server/server.js` and browse to `http://localhost:3412`
+Type `npm start` and browse to `http://localhost:3412`
 
 ## Client features
 - default page not being shown by the router
