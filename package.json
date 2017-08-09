@@ -22,7 +22,7 @@
     "sinon": "^1.11.1"
   },
   "scripts": {
-    "client": "node server/server.js",
+    "client": "nodemon server/server.js",
     "server": "json-server --watch server/db.json",
     "test": "karma start karma.config.js",
     "start": "concurrent \"npm run server\" \"npm run client\""
