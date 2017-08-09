@@ -112,7 +112,8 @@
                                class="btn btn-danger"
                                value="Delete"
                                ng-really-message="Are you sure?"
-                               ng-really-click="vm.deleteFilm(vm.film)" />
+                               ng-really-click="vm.deleteFilm(vm.film)"
+                                ng-if="vm.film.id != -1" />
                     </div>
                     <div class="col-sm-3">
                         <div class="pull-right">
